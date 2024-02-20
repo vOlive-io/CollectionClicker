@@ -1,11 +1,11 @@
-var plant = 0;
+var redRaz = 0;
 var mod = 1;
 var clicks = 0;
 
 
 function play() {
-  plant += mod;
-  clicks += mod;
+  redRaz += mod;
+  clicks += 1;
 }
 
 
