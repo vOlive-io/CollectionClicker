@@ -1,4 +1,5 @@
-var redRaz = 0;
+var redBer = 0;
+var oraBer = 0;
 var mod = 1;
 var clicks = 0;
 
