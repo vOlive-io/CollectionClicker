@@ -1,5 +1,10 @@
 var redBer = 0;
 var oraBer = 0;
+var yelBer = 0;
+var greBer = 0;
+var bluBer = 0;
+var purBer = 0;
+var goldBer = 0;
 var mod = 1;
 var clicks = 0;
 
