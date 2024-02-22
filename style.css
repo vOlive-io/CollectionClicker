@@ -1,3 +1,8 @@
 body {
   background-color: #3b1c01;
 }
+
+#clicker {
+  width: 30px;
+  height: 20px;
+}
