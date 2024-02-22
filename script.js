@@ -7,9 +7,8 @@ var berryFer5 = 0;
 var berryFer6 = 0;
 var berryFer7 = 0;
 var comicBerry = 0;
-var mod = 1;
 var clicks = 0;
-
+var mod = 1;
 
 function play() {
   coins += mod;
