@@ -41,4 +41,16 @@ var item17 = 0;
 function play() {
   coins += mod;
   clicks += 1;
+  //add a part here that 25% of the time function list is called
 }
+
+
+function lst() {
+
+
+
+
+
+
+
+
