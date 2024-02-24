@@ -16,23 +16,23 @@ var mod = 1;
 /////////////////////////////////////
 //              Items              //
 /////////////////////////////////////
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
-var item = 0;
+var item1 = 0;
+var item2 = 0;
+var item3 = 0;
+var item4 = 0;
+var item5 = 0;
+var item6 = 0;
+var item7 = 0;
+var item8 = 0;
+var item9 = 0;
+var item10 = 0;
+var item11 = 0;
+var item12 = 0;
+var item13 = 0;
+var item14 = 0;
+var item15 = 0;
+var item16 = 0;
+var item17 = 0;
 
 
 
