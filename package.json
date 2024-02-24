@@ -3,6 +3,7 @@
         "tailwindcss": "^3.4.1"
     },
     "scripts": {
-        "buildcss": "nodemon --exec \"node-sass scss/styles.scss -o css/\""
+        "buildcss": "node-sass scss/styles.scss -o css/ && tailwindcss -i ./css/styles.css -o ./build/css/styles.css",
+        "watchcss": "node watch-css.js"
     }
 }
