@@ -42,8 +42,10 @@ const resources = {
 /////////////////////////////////////
 
 const play = () => {
-	resources.coins += resources.modifier;
+	resources.coins += 1 * resources.modifier;
 	resources.clicks += 1;
+
+	console.log(resources);
 }
 
 const Item = () => {

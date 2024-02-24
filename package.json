@@ -1,1 +1,8 @@
-{ "dependencies": { "tailwindcss": "^3.4.1" } }
+{
+    "dependencies": {
+        "tailwindcss": "^3.4.1"
+    },
+    "scripts": {
+        "buildcss": "nodemon --exec \"node-sass scss/styles.scss -o css/\""
+    }
+}
