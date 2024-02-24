@@ -45,7 +45,9 @@ function play() {
 }
 
 
-function lst() {
+function list() {
+//add a part here that gives you a radom item from the "items" var list. item 1 should be tho most common, item 2 a littles less, item thress less than 2. so on and so on.
+}
 
 
 
