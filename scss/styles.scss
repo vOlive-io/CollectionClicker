@@ -2,6 +2,22 @@
 @import 'node_modules/tailwindcss/components';
 @import 'node_modules/tailwindcss/utilities';
 
+* {
+    @apply select-none;
+}
+
 body {
   @apply bg-[#3b1c01];
+}
+
+.game {
+    @apply flex items-center justify-center w-screen h-screen text-center;
+}
+
+.clicker {
+    @apply h-16 w-52 mb-28 text-4xl border rounded-full border-green-500 shadow-2xl hover:bg-green-800 hover:border-none transition-all duration-300;
+}
+
+.coins {
+    @apply text-white font-serif font-semibold text-7xl pb-32;
 }
