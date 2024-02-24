@@ -1,3 +1,6 @@
+/////////////////////////////////////
+//             Berrys              //
+/////////////////////////////////////
 var coins = 50;
 var berryFer1 = 0;
 var berryFer2 = 0;
@@ -9,6 +12,12 @@ var berryFer7 = 0;
 var comicBerry = 0;
 var clicks = 0;
 var mod = 1;
+
+/////////////////////////////////////
+//              Items              //
+/////////////////////////////////////
+
+
 
 function play() {
   coins += mod;
