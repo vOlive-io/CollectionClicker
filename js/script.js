@@ -16,8 +16,8 @@ var mod = 1;
 /////////////////////////////////////
 //              Items              //
 /////////////////////////////////////
-
-
+var silverCoin = 0;
+var 
 
 function play() {
   coins += mod;
