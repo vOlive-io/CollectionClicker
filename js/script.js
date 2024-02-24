@@ -16,8 +16,24 @@ var mod = 1;
 /////////////////////////////////////
 //              Items              //
 /////////////////////////////////////
-var silverCoin = 0;
-var 
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+var item = 0;
+
 
 
   
