@@ -46,7 +46,7 @@ function play() {
 
 
 function list() {
-//add a part here that gives you a radom item from the "items" var list. item 1 should be tho most common, item 2 a littles less, item thress less than 2. so on and so on.
+//add a part here that gives you a random item from the "items" var list. item 1 should be the most common, item 2 a little less, item 3 less than 2. so on and so on.
 }
 
 
