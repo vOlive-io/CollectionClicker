@@ -1,5 +1,5 @@
 /////////////////////////////////////
-//             Berrys              //
+//             Berries             //
 /////////////////////////////////////
 var coins = 50;
 var berryFer1 = 0;
@@ -18,6 +18,9 @@ var mod = 1;
 /////////////////////////////////////
 var silverCoin = 0;
 var 
+
+
+  
 
 function play() {
   coins += mod;
