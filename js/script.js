@@ -37,6 +37,13 @@ const resources = {
 	},
 };
 
+const play = () => {
+	resources.coins += (1 * resources.modifier) - 1 + (resources.sqModifier ** 2);
+	resources.clicks += 1;
+	
+	updateAllDisplays();
+}
+
 /////////////////////////////////////
 //             Functions           //
 /////////////////////////////////////
@@ -45,24 +52,14 @@ const updateCurrency = () => {
 	coinsElement.textContent = resources.coins.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }
 
-
-
 const updateCostDisplaySq = () => {
 	const costDisplay = document.getElementById('sales-price-mod-sq');
 	costDisplay.textContent = `cost: ${(99 + resources.sqModifier ** 3).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
 }
 
-
 const updateAllDisplays = () => {
 	updateCurrency();
 	updateCostDisplaySq();
-}
-
-const play = () => {
-	resources.coins += (1 * resources.modifier) - 1 + (resources.sqModifier ** 2);
-	resources.clicks += 1;
-	
-	updateAllDisplays();
 }
 
 const Item = () => {
@@ -71,18 +68,6 @@ const Item = () => {
 	resources.items[randomItemKey] += 1;
 }
 
-
-
-const buyModSq = () => {
-	if (resources.coins < 99 + resources.sqModifier ** 3) {
-		return alert("Not enough money");
-	}
-
-	resources.coins -= 99 + resources.sqModifier ** 3;
-	resources.sqModifier += 1;
-
-	updateAllDisplays();
-}
 
 /////////////////////////////////////
 //             Cookies             //
@@ -109,10 +94,33 @@ const loadGame = () => {
 	updateAllDisplays();
 }
 
+loadGame();
+
 // Start game code
 // Please teach how to do your special comments
 
+
+
+
+
+
+
+
+
+
 /*
+
+const buyModSq = () => {
+	if (resources.coins < 99 + resources.sqModifier ** 3) {
+		return alert("Not enough money");
+	}
+
+	resources.coins -= 99 + resources.sqModifier ** 3;
+	resources.sqModifier += 1;
+
+	updateAllDisplays();
+}
+
 
 const updateCostDisplay = () => {
 	const costDisplay = document.getElementById('sales-price-mod');
@@ -146,4 +154,3 @@ const resizeSalesText = () => {
 	});
 }
 */
-loadGame();
