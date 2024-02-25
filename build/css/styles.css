@@ -2376,7 +2376,7 @@ body {
 }
 
 .clicker {
-  margin-bottom: 7rem;
+  margin-bottom: 15vh;
   height: 4rem;
   width: 13rem;
   border-radius: 9999px;
@@ -2394,13 +2394,19 @@ body {
 }
 
 .clicker:hover {
-  border-style: none;
+  border-color: transparent;
   --tw-bg-opacity: 1;
   background-color: rgb(22 101 52 / var(--tw-bg-opacity));
 }
 
+.clicker:active {
+  --tw-border-opacity: 1;
+  border-color: rgb(34 197 94 / var(--tw-border-opacity));
+  background-color: transparent;
+}
+
 .coins {
-  padding-bottom: 8rem;
+  padding-bottom: 15vh;
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 4.5rem;
   line-height: 1;

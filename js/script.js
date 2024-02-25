@@ -41,11 +41,16 @@ const resources = {
 //             Functions           //
 /////////////////////////////////////
 
+const updateCurrency = () => {
+	const coinsElement = document.getElementById('coins');
+	coinsElement.textContent = resources.coins.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+}
+
 const play = () => {
 	resources.coins += 1 * resources.modifier;
 	resources.clicks += 1;
-
-	console.log(resources);
+	
+	updateCurrency();
 }
 
 const Item = () => {
@@ -53,3 +58,33 @@ const Item = () => {
 	const randomItemKey = itemKeys[Math.floor(Math.random() * itemKeys.length)];
 	resources.items[randomItemKey] += 1;
 }
+
+// utils
+
+window.addEventListener('beforeunload', () => {
+	saveGame();
+});
+
+const saveGame = () => {
+	localStorage.setItem('gameState', JSON.stringify(resources));
+	console.log('Game saved!');
+}
+
+const loadGame = () => {
+	const savedGameState = localStorage.getItem('gameState');
+	if (savedGameState) {
+		const parsedGameState = JSON.parse(savedGameState);
+		Object.assign(resources, parsedGameState);
+		console.log('Game loaded!');
+	} else {
+		console.log('No saved game found.');
+	}
+
+	updateCurrency();
+}
+
+// Start game code
+// Please teach how to do your special comments
+
+
+loadGame();
