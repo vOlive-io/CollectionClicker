@@ -57,26 +57,9 @@ const updateCostDisplaySq = () => {
 	costDisplay.textContent = `cost: ${(99 + resources.sqModifier ** 3).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
 }
 
-const resizeSalesText = () => {
-	const salesPriceElements = document.querySelectorAll('.sales-price');
-	const containerWidth = 208;
-
-	salesPriceElements.forEach((salesPriceText) => {
-		const textWidth = salesPriceText.offsetWidth;
-
-		if (textWidth > containerWidth) {
-			const fontSize = parseFloat(window.getComputedStyle(salesPriceText).fontSize);
-			const newFontSize = (containerWidth / textWidth) * fontSize;
-			console.log(newFontSize);
-			salesPriceText.style.fontSize = `${newFontSize}px`;
-		}
-	});
-}
 
 const updateAllDisplays = () => {
 	updateCurrency();
-	updateCostDisplay();
-	resizeSalesText();
 	updateCostDisplaySq();
 }
 
@@ -93,16 +76,7 @@ const Item = () => {
 	resources.items[randomItemKey] += 1;
 }
 
-const buyMod = () => {
-	if (resources.coins < 24 + resources.modifier ** 2) {
-		return alert("Not enough money");
-	}
 
-	resources.coins -= 24 + resources.modifier ** 2;
-	resources.modifier += 1;
-
-	updateAllDisplays();
-}
 
 const buyModSq = () => {
 	if (resources.coins < 99 + resources.sqModifier ** 3) {
@@ -115,8 +89,9 @@ const buyModSq = () => {
 	updateAllDisplays();
 }
 
-// utils
-
+/////////////////////////////////////
+//             Cookies             //
+/////////////////////////////////////
 window.addEventListener('beforeunload', () => {
 	saveGame();
 });
@@ -142,5 +117,32 @@ const loadGame = () => {
 // Start game code
 // Please teach how to do your special comments
 
+/*
+const buyMod = () => {
+	if (resources.coins < 24 + resources.modifier ** 2) {
+		return alert("Not enough money");
+	}
 
+	resources.coins -= 24 + resources.modifier ** 2;
+	resources.modifier += 1;
+
+	updateAllDisplays();
+}
+ 
+const resizeSalesText = () => {
+	const salesPriceElements = document.querySelectorAll('.sales-price');
+	const containerWidth = 208;
+
+	salesPriceElements.forEach((salesPriceText) => {
+		const textWidth = salesPriceText.offsetWidth;
+
+		if (textWidth > containerWidth) {
+			const fontSize = parseFloat(window.getComputedStyle(salesPriceText).fontSize);
+			const newFontSize = (containerWidth / textWidth) * fontSize;
+			console.log(newFontSize);
+			salesPriceText.style.fontSize = `${newFontSize}px`;
+		}
+	});
+}
+*/
 loadGame();
