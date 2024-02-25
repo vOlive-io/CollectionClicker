@@ -63,7 +63,12 @@ const Item = () => {
 }
 
 
-// utils
+
+
+
+/////////////////////////////////////
+//             Cookies             //
+/////////////////////////////////////
 window.addEventListener('beforeunload', () => {
 	saveGame();
 });
