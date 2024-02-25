@@ -46,7 +46,6 @@ const updateCurrency = () => {
 	coinsElement.textContent = resources.coins.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }
 
-
 const updateAllDisplays = () => {
 	updateCurrency()
 }
