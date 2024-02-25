@@ -54,7 +54,6 @@ const updateAllDisplays = () => {
 const play = () => {
 	resources.coins += 1 * resources.modifier;
 	resources.clicks += 1;
-	
 	updateAllDisplays();
 }
 
@@ -65,9 +64,7 @@ const Item = () => {
 }
 
 
-
 // utils
-
 window.addEventListener('beforeunload', () => {
 	saveGame();
 });
@@ -86,7 +83,6 @@ const loadGame = () => {
 	} else {
 		console.log('No saved game found.');
 	}
-
 	updateAllDisplays();
 }
 
