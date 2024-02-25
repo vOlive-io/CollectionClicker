@@ -7,6 +7,9 @@
 body {
   @apply bg-[#3b1c01]; }
 
+.item {
+}
+
 .game {
   @apply flex items-center justify-center w-screen h-screen text-center; }
 
@@ -16,11 +19,3 @@ body {
 .coins {
   @apply text-white font-serif font-semibold text-7xl pb-[15vh] mt-36; }
 
-.sales {
-  @apply mb-[15vh] flex text-white pt-36 items-center space-x-6 justify-evenly; }
-
-.mod {
-  @apply h-16 w-52 text-4xl border rounded-full; }
-
-.sales-price {
-  @apply text-lg text-white pt-3 text-center justify-center flex whitespace-nowrap; }
