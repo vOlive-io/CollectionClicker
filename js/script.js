@@ -87,16 +87,7 @@ const Item = () => {
 	resources.items[randomItemKey] += 1;
 }
 
-const buyMod = () => {
-	if (resources.coins < 24 + resources.modifier ** 2) {
-		return alert("Not enough money");
-	}
 
-	resources.coins -= 24 + resources.modifier ** 2;
-	resources.modifier += 1;
-
-	updateAllDisplays();
-}
 
 // utils
 
@@ -125,5 +116,19 @@ const loadGame = () => {
 // Start game code
 // Please teach how to do your special comments
 
-
 loadGame();
+
+
+/*
+const buyMod = () => {
+	if (resources.coins < 24 + resources.modifier ** 2) {
+		return alert("Not enough money");
+	}
+
+	resources.coins -= 24 + resources.modifier ** 2;
+	resources.modifier += 1;
+
+	updateAllDisplays();
+}
+*/
+
