@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
   <head>
     <title>Collection Clicker</title>
     <link rel="shortcut icon" href="assets/berryFer2.png" type="image/x-icon" />
@@ -12,22 +13,48 @@
       <div id="collect">
         <h1 id="coins" class="coins">₩0</h1>
         <button id="clicker" class="clicker" onclick="play()"> 💰 </button>
-        <div class="sales">
-      <!--
-            <button class="mod" onclick="buyMod()"> × </button>
-            <p id="sales-price-mod" class="sales-price">cost: $25</p>
+          <div class="sales" id="sales">
+            <div>
+              <button class="mod" onclick="buyMod()"> × </button>
+              <p id="sales-price-mod" class="sales-price">cost: $25</p>
+            </div>
+            <div>
+              <button class="mod" onclick="buyModSq()"> x² </button>
+              <p id="sales-price-mod-sq" class="sales-price">cost: $100</p>
+            </div>
+            <div>
+              <button class="mod" onclick="buyMod4th()"> x⁴<!-- <sup>4</sup> --> </button>
+              <p id="sales-price-mod-4th" class="sales-price">cost: $1000</p>
+            </div>
+            <div>
+              <button class="mod" onclick="buyMod8th()"> x⁸ </button>
+              <p id="sales-price-mod-8th" class="sales-price">cost: $10,000</p>
+            </div>
+            <div>
+              <button class="mod" onclick="buyMod16th()"> x¹⁶ </button>
+              <p id="sales-price-mod-16th" class="sales-price">cost: $100,000</p>
+            </div>
+            <div>
+              <button class="mod" onclick="buyMod32nd()"> x³² </button>
+              <p id="sales-price-mod-32nd" class="sales-price">cost: $1,000,000</p>
+            </div>
+            <div>
+              <button class="mod" onclick="buyMod64th()"> x⁶⁴ </button>
+              <p id="sales-price-mod-64th" class="sales-price">cost: $10,000,000</p>
+            </div>
+            <div>
+              <button class="mod" onclick="buyMod128th()"> x¹²⁸ </button>
+              <p id="sales-price-mod-128th" class="sales-price">cost: $100,000,000</p>
+            </div>
+            <div>
+              <button class="mod" onclick="buyMod256th()"> x²⁵⁶ </button>
+              <p id="sales-price-mod-256th" class="sales-price">cost: $1,000,000,000</p>
+            </div>
           </div>
-          <div>
-            <button class="mod" onclick="buyModSq()"> x² </button>
-            <p id="sales-price-mod-sq" class="sales-price">cost: $100</p>
-       -->
-        </div>
       </div>
-      <br><br><br><br>
-    </div>
       <div id="owned">
-        <button id="berryFer1" class="item">Berry</button>
-        <button id="berryFer2" class="item">Berry</button>
       </div>
+    </div>
   </body>
+
 </html>

@@ -7,11 +7,15 @@
 }
 
 body {
-  @apply bg-[#3b1c01];
+    @apply bg-[#3b1c01];
 }
 
 .game {
     @apply flex items-center justify-center w-screen h-screen text-center;
+}
+
+.collect {
+    @apply flex flex-col items-center;
 }
 
 .clicker {
@@ -23,7 +27,7 @@ body {
 }
 
 .sales {
-    @apply mb-[15vh] flex text-white pt-36 items-center space-x-6 justify-evenly;
+    @apply flex text-white space-x-6 overflow-scroll max-w-28 w-full;
 }
 
 .mod {
