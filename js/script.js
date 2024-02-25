@@ -49,8 +49,6 @@ const updateCurrency = () => {
 
 const updateAllDisplays = () => {
 	updateCurrency()
-	updateCostDisplay()
-	resizeSalesText();
 }
 
 const play = () => {
