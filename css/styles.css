@@ -23,4 +23,4 @@ body {
   @apply h-16 w-52 text-4xl border rounded-full; }
 
 .sales-price {
-  @apply text-lg text-white; }
+  @apply text-lg text-white pt-3 text-center justify-center flex whitespace-nowrap; }

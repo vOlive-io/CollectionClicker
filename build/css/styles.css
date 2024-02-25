@@ -2444,6 +2444,11 @@ body {
 }
 
 .sales-price {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  padding-top: 0.75rem;
+  text-align: center;
   font-size: 1.125rem;
   line-height: 1.75rem;
   --tw-text-opacity: 1;

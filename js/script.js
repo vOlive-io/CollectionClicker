@@ -52,9 +52,24 @@ const updateCostDisplay = () => {
 	costDisplay.textContent = `cost: ${(24 + resources.modifier ** 2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
 }
 
+const resizeSalesText = () => {
+	const salesPriceText = document.querySelector('.sales-price');
+
+	const containerWidth = 208;
+	const textWidth = salesPriceText.offsetWidth;
+
+	if (textWidth > containerWidth) {
+		const fontSize = parseFloat(window.getComputedStyle(salesPriceText).fontSize);
+		const newFontSize = (containerWidth / textWidth) * fontSize;
+		console.log(newFontSize);
+		salesPriceText.style.fontSize = `${newFontSize}px`;
+	}
+}
+
 const updateAllDisplays = () => {
 	updateCurrency()
 	updateCostDisplay()
+	resizeSalesText();
 }
 
 const play = () => {
