@@ -303,10 +303,16 @@ loadGame();
 
 
 
-let isDragging = false;
-let startX, scrollLeft;
+
+
 
 const salesContainer = document.getElementById('sales');
+const scrollMod = 1.2;
+const leftBound = -1 * salesContainer.scrollWidth / 2;
+const rightBound = salesContainer.scrollWidth / 2;
+
+let isDragging = false;
+let startX, scrollLeft;
 
 salesContainer.addEventListener('mousedown', (e) => {
 	isDragging = true;
@@ -314,13 +320,15 @@ salesContainer.addEventListener('mousedown', (e) => {
 	scrollLeft = salesContainer.scrollLeft;
 });
 
-salesContainer.addEventListener('mouseup', () => {
-	isDragging = false;
+document.addEventListener('mouseup', () => {
+	if (isDragging) {
+		isDragging = false;
+	}
 });
 
-salesContainer.addEventListener('mousemove', (e) => {
+document.addEventListener('mousemove', (e) => {
 	if (!isDragging) return;
 	const x = e.pageX - salesContainer.offsetLeft;
-	const walk = (x - startX) * 2; // Adjust the multiplier based on your preference
+	const walk = Math.max(leftBound, Math.min(rightBound, (x - startX) * scrollMod)); // Adjust the multiplier based on your preference
 	salesContainer.style.transform = `translateX(${walk}px)`;
 });

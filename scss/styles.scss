@@ -27,7 +27,7 @@ body {
 }
 
 .sales {
-    @apply flex text-white space-x-6 overflow-scroll max-w-28 w-full;
+    @apply flex text-white space-x-6 overflow-hidden max-w-screen;
 }
 
 .mod {
