@@ -1,7 +1,6 @@
 /////////////////////////////////////
 //             Resources           //
 /////////////////////////////////////
-
 const resources = {
 	coins: 50,
 	clicks: 0,
@@ -40,7 +39,6 @@ const resources = {
 /////////////////////////////////////
 //             Functions           //
 /////////////////////////////////////
-
 const updateCurrency = () => {
 	const coinsElement = document.getElementById('coins');
 	coinsElement.textContent = resources.coins.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
@@ -61,8 +59,6 @@ const Item = () => {
 	const randomItemKey = itemKeys[Math.floor(Math.random() * itemKeys.length)];
 	resources.items[randomItemKey] += 1;
 }
-
-
 
 
 
