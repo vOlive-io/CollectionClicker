@@ -1,7 +1,6 @@
 /////////////////////////////////////
 //             Resources           //
 /////////////////////////////////////
-
 const resources = {
 	coins: 50,
 	clicks: 0,
@@ -41,16 +40,12 @@ const resources = {
 /////////////////////////////////////
 //             Functions           //
 /////////////////////////////////////
-
 const updateCurrency = () => {
 	const coinsElement = document.getElementById('coins');
 	coinsElement.textContent = resources.coins.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }
 
-const updateCostDisplay = () => {
-	const costDisplay = document.getElementById('sales-price-mod');
-	costDisplay.textContent = `cost: ${(24 + resources.modifier ** 2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
-}
+
 
 const updateCostDisplaySq = () => {
 	const costDisplay = document.getElementById('sales-price-mod-sq');
@@ -118,6 +113,12 @@ const loadGame = () => {
 // Please teach how to do your special comments
 
 /*
+
+const updateCostDisplay = () => {
+	const costDisplay = document.getElementById('sales-price-mod');
+	costDisplay.textContent = `cost: ${(24 + resources.modifier ** 2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
+}
+
 const buyMod = () => {
 	if (resources.coins < 24 + resources.modifier ** 2) {
 		return alert("Not enough money");
