@@ -53,17 +53,19 @@ const updateCostDisplay = () => {
 }
 
 const resizeSalesText = () => {
-	const salesPriceText = document.querySelector('.sales-price');
-
+	const salesPriceElements = document.querySelectorAll('.sales-price');
 	const containerWidth = 208;
-	const textWidth = salesPriceText.offsetWidth;
 
-	if (textWidth > containerWidth) {
-		const fontSize = parseFloat(window.getComputedStyle(salesPriceText).fontSize);
-		const newFontSize = (containerWidth / textWidth) * fontSize;
-		console.log(newFontSize);
-		salesPriceText.style.fontSize = `${newFontSize}px`;
-	}
+	salesPriceElements.forEach((salesPriceText) => {
+		const textWidth = salesPriceText.offsetWidth;
+
+		if (textWidth > containerWidth) {
+			const fontSize = parseFloat(window.getComputedStyle(salesPriceText).fontSize);
+			const newFontSize = (containerWidth / textWidth) * fontSize;
+			console.log(newFontSize);
+			salesPriceText.style.fontSize = `${newFontSize}px`;
+		}
+	});
 }
 
 const updateAllDisplays = () => {
