@@ -46,27 +46,6 @@ const updateCurrency = () => {
 	coinsElement.textContent = resources.coins.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }
 
-const updateCostDisplay = () => {
-	const costDisplay = document.getElementById('sales-price-mod');
-	console.log(24 + resources.modifier ** 2)
-	costDisplay.textContent = `cost: ${(24 + resources.modifier ** 2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
-}
-
-const resizeSalesText = () => {
-	const salesPriceElements = document.querySelectorAll('.sales-price');
-	const containerWidth = 208;
-
-	salesPriceElements.forEach((salesPriceText) => {
-		const textWidth = salesPriceText.offsetWidth;
-
-		if (textWidth > containerWidth) {
-			const fontSize = parseFloat(window.getComputedStyle(salesPriceText).fontSize);
-			const newFontSize = (containerWidth / textWidth) * fontSize;
-			console.log(newFontSize);
-			salesPriceText.style.fontSize = `${newFontSize}px`;
-		}
-	});
-}
 
 const updateAllDisplays = () => {
 	updateCurrency()
@@ -129,6 +108,28 @@ const buyMod = () => {
 	resources.modifier += 1;
 
 	updateAllDisplays();
+}
+
+const updateCostDisplay = () => {
+	const costDisplay = document.getElementById('sales-price-mod');
+	console.log(24 + resources.modifier ** 2)
+	costDisplay.textContent = `cost: ${(24 + resources.modifier ** 2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
+}
+
+const resizeSalesText = () => {
+	const salesPriceElements = document.querySelectorAll('.sales-price');
+	const containerWidth = 208;
+
+	salesPriceElements.forEach((salesPriceText) => {
+		const textWidth = salesPriceText.offsetWidth;
+
+		if (textWidth > containerWidth) {
+			const fontSize = parseFloat(window.getComputedStyle(salesPriceText).fontSize);
+			const newFontSize = (containerWidth / textWidth) * fontSize;
+			console.log(newFontSize);
+			salesPriceText.style.fontSize = `${newFontSize}px`;
+		}
+	});
 }
 */
 
