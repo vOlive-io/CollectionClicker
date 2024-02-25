@@ -1,10 +1,12 @@
 /////////////////////////////////////
 //             Resources           //
 /////////////////////////////////////
+
 const resources = {
 	coins: 50,
 	clicks: 0,
 	modifier: 1,
+	sqModifier: 1,
 	berries: {
 		berryFer1: 0,
 		berryFer2: 0,
@@ -39,18 +41,49 @@ const resources = {
 /////////////////////////////////////
 //             Functions           //
 /////////////////////////////////////
+
 const updateCurrency = () => {
 	const coinsElement = document.getElementById('coins');
 	coinsElement.textContent = resources.coins.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }
 
+const updateCostDisplay = () => {
+	const costDisplay = document.getElementById('sales-price-mod');
+	costDisplay.textContent = `cost: ${(24 + resources.modifier ** 2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
+}
+
+const updateCostDisplaySq = () => {
+	const costDisplay = document.getElementById('sales-price-mod-sq');
+	costDisplay.textContent = `cost: ${(99 + resources.sqModifier ** 3).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
+}
+
+const resizeSalesText = () => {
+	const salesPriceElements = document.querySelectorAll('.sales-price');
+	const containerWidth = 208;
+
+	salesPriceElements.forEach((salesPriceText) => {
+		const textWidth = salesPriceText.offsetWidth;
+
+		if (textWidth > containerWidth) {
+			const fontSize = parseFloat(window.getComputedStyle(salesPriceText).fontSize);
+			const newFontSize = (containerWidth / textWidth) * fontSize;
+			console.log(newFontSize);
+			salesPriceText.style.fontSize = `${newFontSize}px`;
+		}
+	});
+}
+
 const updateAllDisplays = () => {
-	updateCurrency()
+	updateCurrency();
+	updateCostDisplay();
+	resizeSalesText();
+	updateCostDisplaySq();
 }
 
 const play = () => {
-	resources.coins += 1 * resources.modifier;
+	resources.coins += (1 * resources.modifier) - 1 + (resources.sqModifier ** 2);
 	resources.clicks += 1;
+	
 	updateAllDisplays();
 }
 
@@ -60,11 +93,30 @@ const Item = () => {
 	resources.items[randomItemKey] += 1;
 }
 
+const buyMod = () => {
+	if (resources.coins < 24 + resources.modifier ** 2) {
+		return alert("Not enough money");
+	}
 
+	resources.coins -= 24 + resources.modifier ** 2;
+	resources.modifier += 1;
 
-/////////////////////////////////////
-//             Cookies             //
-/////////////////////////////////////
+	updateAllDisplays();
+}
+
+const buyModSq = () => {
+	if (resources.coins < 99 + resources.sqModifier ** 3) {
+		return alert("Not enough money");
+	}
+
+	resources.coins -= 99 + resources.sqModifier ** 3;
+	resources.sqModifier += 1;
+
+	updateAllDisplays();
+}
+
+// utils
+
 window.addEventListener('beforeunload', () => {
 	saveGame();
 });
@@ -83,47 +135,12 @@ const loadGame = () => {
 	} else {
 		console.log('No saved game found.');
 	}
+
 	updateAllDisplays();
 }
 
 // Start game code
 // Please teach how to do your special comments
 
+
 loadGame();
-
-
-/*
-const buyMod = () => {
-	if (resources.coins < 24 + resources.modifier ** 2) {
-		return alert("Not enough money");
-	}
-
-	resources.coins -= 24 + resources.modifier ** 2;
-	resources.modifier += 1;
-
-	updateAllDisplays();
-}
-
-const updateCostDisplay = () => {
-	const costDisplay = document.getElementById('sales-price-mod');
-	console.log(24 + resources.modifier ** 2)
-	costDisplay.textContent = `cost: ${(24 + resources.modifier ** 2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
-}
-
-const resizeSalesText = () => {
-	const salesPriceElements = document.querySelectorAll('.sales-price');
-	const containerWidth = 208;
-
-	salesPriceElements.forEach((salesPriceText) => {
-		const textWidth = salesPriceText.offsetWidth;
-
-		if (textWidth > containerWidth) {
-			const fontSize = parseFloat(window.getComputedStyle(salesPriceText).fontSize);
-			const newFontSize = (containerWidth / textWidth) * fontSize;
-			console.log(newFontSize);
-			salesPriceText.style.fontSize = `${newFontSize}px`;
-		}
-	});
-}
-*/
-
