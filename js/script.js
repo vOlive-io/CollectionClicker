@@ -46,17 +46,39 @@ const updateCurrency = () => {
 	coinsElement.textContent = resources.coins.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }
 
+const updateCostDisplay = () => {
+	const costDisplay = document.getElementById('sales-price-mod');
+	console.log(24 + resources.modifier ** 2)
+	costDisplay.textContent = `cost: ${(24 + resources.modifier ** 2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`
+}
+
+const updateAllDisplays = () => {
+	updateCurrency()
+	updateCostDisplay()
+}
+
 const play = () => {
 	resources.coins += 1 * resources.modifier;
 	resources.clicks += 1;
 	
-	updateCurrency();
+	updateAllDisplays();
 }
 
 const Item = () => {
 	const itemKeys = Object.keys(resources.items);
 	const randomItemKey = itemKeys[Math.floor(Math.random() * itemKeys.length)];
 	resources.items[randomItemKey] += 1;
+}
+
+const buyMod = () => {
+	if (resources.coins < 24 + resources.modifier ** 2) {
+		return alert("Not enough money");
+	}
+
+	resources.coins -= 24 + resources.modifier ** 2;
+	resources.modifier += 1;
+
+	updateAllDisplays();
 }
 
 // utils
@@ -80,7 +102,7 @@ const loadGame = () => {
 		console.log('No saved game found.');
 	}
 
-	updateCurrency();
+	updateAllDisplays();
 }
 
 // Start game code
